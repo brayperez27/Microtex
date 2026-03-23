@@ -1,0 +1,96 @@
+﻿/* =============================================
+   Microtex – Product Detail Page
+   Styles/detalle.css
+   ============================================= */
+
+/* Fade-in page load */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeUp 0.5s ease both;
+}
+
+/* Main image zoom effect */
+.detail-main-img img {
+    transition: transform 0.5s ease;
+}
+
+.detail-main-img:hover img {
+    transform: scale(1.03);
+}
+
+/* Thumbnail active state */
+.thumb-item {
+    border-color: transparent;
+    transition: border-color 0.2s, opacity 0.2s;
+    opacity: 0.65;
+}
+
+    .thumb-item:hover {
+        opacity: 1;
+    }
+
+    .thumb-item.border-dark-neutral {
+        border-color: #1e293b !important;
+        opacity: 1;
+    }
+
+/* Color swatch */
+.color-swatch {
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+    .color-swatch:hover {
+        transform: scale(1.12);
+    }
+
+/* Add to cart button icon helper */
+#btnAddToCart::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM5.3 6h13.4l-1.5 7H6.8L5.3 6zM1 1h2l.7 2H20c.6 0 1 .4 1 1 0 .2 0 .3-.1.5l-3 5.4c-.3.5-.8.1-1.4.1H6.1L5 13h13v2H5c-.6 0-1-.4-1-1 0-.2 0-.3.1-.5L5.3 11 3 3H1V1z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+}
+
+/* Tab content transitions */
+.tab-content {
+    animation: fadeUp 0.3s ease both;
+}
+
+/* Specs table hover rows */
+tbody tr:hover td {
+    background: #f8fafc;
+}
+
+.dark tbody tr:hover td {
+    background: rgba(255,255,255,0.03);
+}
+
+/* Step numbers in Application tab */
+.step-number {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
