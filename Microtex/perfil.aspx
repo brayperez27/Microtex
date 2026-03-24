@@ -16,8 +16,8 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            font-family: 'Inter',sans-serif;
-            background: #F0EEE6;
+            font-family: 'Inter', sans-serif;
+            background: #f8f7f4;
         }
 
         body {
@@ -58,8 +58,8 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 9px 12px;
-            border-radius: 8px;
+            padding: 10px 12px;
+            border-radius: 10px;
             font-size: .8125rem;
             font-weight: 500;
             color: #4b5563;
@@ -69,7 +69,7 @@
             border: none;
             width: 100%;
             text-align: left;
-            transition: background .12s,color .12s;
+            transition: background .12s, color .12s;
         }
 
             .nav-item:hover {
@@ -114,28 +114,29 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(4px)
+                transform: translateY(4px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0)
+                transform: translateY(0);
             }
         }
 
         .section-card {
             background: #fff;
             border: 1px solid #e5e7eb;
-            border-radius: 14px;
+            border-radius: 16px;
             margin-bottom: 16px;
             overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,.04);
         }
 
         .section-head {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 22px;
+            padding: 16px 20px;
             border-bottom: 1px solid #f3f4f6;
         }
 
@@ -155,31 +156,37 @@
             color: #6b7280;
             text-transform: uppercase;
             letter-spacing: .06em;
-            background: none;
+            background: #f3f4f6;
             border: none;
             cursor: pointer;
-            padding: 4px 8px;
-            border-radius: 6px;
+            padding: 5px 10px;
+            border-radius: 8px;
             transition: all .12s;
         }
 
             .btn-edit:hover {
-                background: #f3f4f6;
+                background: #e5e7eb;
                 color: #111827;
             }
 
         .section-body {
-            padding: 20px 22px;
+            padding: 18px 20px;
         }
 
         .data-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px 32px;
+            gap: 18px 28px;
         }
 
-        @media(max-width:540px) {
-            .data-grid {
+        .edit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        @media(max-width: 600px) {
+            .data-grid, .edit-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
             }
@@ -202,15 +209,15 @@
 
         .form-input {
             width: 100%;
-            padding: 9px 13px;
+            padding: 10px 13px;
             border: 1.5px solid #e5e7eb;
-            border-radius: 9px;
+            border-radius: 10px;
             font-size: .875rem;
             color: #111827;
-            font-family: 'Inter',sans-serif;
+            font-family: 'Inter', sans-serif;
             background: #f9fafb;
             outline: none;
-            transition: border .15s,background .15s;
+            transition: border .15s, background .15s;
             box-sizing: border-box;
         }
 
@@ -229,21 +236,9 @@
             margin-bottom: 6px;
         }
 
-        .edit-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        @media(max-width:540px) {
-            .edit-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
         .btn-primary {
-            padding: 9px 18px;
-            border-radius: 9px;
+            padding: 10px 20px;
+            border-radius: 10px;
             background: #111827;
             color: #fff;
             font-size: .8125rem;
@@ -251,6 +246,7 @@
             border: none;
             cursor: pointer;
             transition: background .12s;
+            white-space: nowrap;
         }
 
             .btn-primary:hover {
@@ -258,8 +254,8 @@
             }
 
         .btn-secondary {
-            padding: 9px 18px;
-            border-radius: 9px;
+            padding: 10px 20px;
+            border-radius: 10px;
             background: #fff;
             color: #374151;
             font-size: .8125rem;
@@ -267,6 +263,7 @@
             border: 1.5px solid #e5e7eb;
             cursor: pointer;
             transition: all .12s;
+            white-space: nowrap;
         }
 
             .btn-secondary:hover {
@@ -275,18 +272,21 @@
 
         .btn-row {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             margin-top: 18px;
         }
 
         .orders-wrap {
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .orders-table {
             width: 100%;
             border-collapse: collapse;
             font-size: .8125rem;
+            min-width: 500px;
         }
 
             .orders-table th {
@@ -299,6 +299,7 @@
                 color: #9ca3af;
                 border-bottom: 1px solid #f3f4f6;
                 white-space: nowrap;
+                background: #fafafa;
             }
 
             .orders-table td {
@@ -319,10 +320,11 @@
         .badge {
             display: inline-flex;
             align-items: center;
-            padding: 3px 9px;
+            padding: 3px 10px;
             border-radius: 20px;
             font-size: .6875rem;
             font-weight: 700;
+            white-space: nowrap;
         }
 
         .badge-ok {
@@ -349,7 +351,7 @@
 
         .empty-state {
             text-align: center;
-            padding: 52px 24px;
+            padding: 48px 24px;
         }
 
         .empty-icon {
@@ -379,19 +381,21 @@
         .alert {
             font-size: .8125rem;
             font-weight: 600;
-            padding: 9px 14px;
-            border-radius: 9px;
+            padding: 10px 14px;
+            border-radius: 10px;
             margin-bottom: 14px;
         }
 
         .alert-ok {
             background: #f0fdf4;
             color: #15803d;
+            border: 1px solid #bbf7d0;
         }
 
         .alert-err {
             background: #fef2f2;
             color: #dc2626;
+            border: 1px solid #fecaca;
         }
 
         #modalPedido {
@@ -419,7 +423,7 @@
             background: #fff;
             border-radius: 20px;
             width: 100%;
-            max-width: 600px;
+            max-width: 580px;
             max-height: 90vh;
             overflow-y: auto;
             box-shadow: 0 24px 48px rgba(0,0,0,.18);
@@ -440,6 +444,7 @@
             align-items: flex-start;
             position: relative;
             margin-top: 10px;
+            gap: 4px;
         }
 
             .timeline::before {
@@ -478,19 +483,143 @@
             }
 
             .tl-dot.active {
-                background: #8f8a7a;
-                border-color: #8f8a7a;
+                background: #6b7280;
+                border-color: #6b7280;
             }
 
         .tl-title {
-            font-size: .8rem;
+            font-size: .75rem;
             font-weight: 700;
             color: #111827;
         }
 
         .tl-sub {
-            font-size: .7rem;
+            font-size: .65rem;
             color: #9ca3af;
+        }
+
+        /* LAYOUT */
+        .perfil-layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .perfil-sidebar {
+            width: 220px;
+            flex-shrink: 0;
+        }
+
+        .perfil-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* MOBILE */
+        @media(max-width: 768px) {
+            .perfil-layout {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .perfil-sidebar {
+                width: 100%;
+            }
+
+                .perfil-sidebar > div {
+                    position: static !important;
+                }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                padding-top: 8px;
+            }
+
+            .nav-item {
+                flex: 1;
+                min-width: 100px;
+                justify-content: center;
+                padding: 8px 10px;
+                font-size: .75rem;
+            }
+
+            .section-head {
+                padding: 14px 16px;
+            }
+
+            .section-body {
+                padding: 14px 16px;
+            }
+
+            .btn-row {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                display: flex;
+            }
+
+            #modalBox {
+                border-radius: 16px;
+                max-height: 95vh;
+            }
+
+            .tl-title {
+                font-size: .65rem;
+            }
+
+            .tl-sub {
+                display: none;
+            }
+        }
+
+        @media(max-width: 480px) {
+            main {
+                padding: 1rem .75rem !important;
+            }
+
+            .section-card {
+                border-radius: 12px;
+            }
+
+            .orders-table th, .orders-table td {
+                padding: 10px 10px;
+            }
+        }
+
+        /* Tabla pedidos mobile mejorada */
+        @media(max-width: 768px) {
+            .orders-table { min-width: unset; width: 100%; }
+            .orders-table thead { display: none; }
+            .orders-table tbody tr {
+                display: flex;
+                flex-direction: column;
+                padding: 14px 16px;
+                border-bottom: 1px solid #f3f4f6;
+                gap: 6px;
+            }
+            .orders-table tbody tr:last-child { border-bottom: none; }
+            .orders-table td {
+                padding: 0;
+                border: none;
+                font-size: .8125rem;
+            }
+            .orders-table td::before {
+                content: attr(data-label);
+                font-size: .6875rem;
+                font-weight: 700;
+                color: #9ca3af;
+                text-transform: uppercase;
+                letter-spacing: .06em;
+                display: block;
+                margin-bottom: 2px;
+            }
+            .orders-table td:last-child { margin-top: 6px; }
         }
     </style>
 </head>
@@ -517,12 +646,12 @@
                     <asp:HyperLink ID="lnkAdmin" runat="server" Visible="false"
                         NavigateUrl="admin-pedidos.aspx"
                         CssClass="text-xs font-bold bg-amber-100 text-amber-700 px-3 py-1 rounded-full hover:bg-amber-200 transition-colors">
-                    Administrar Pedidos
+                        Administrar Pedidos
                     </asp:HyperLink>
                     <asp:HyperLink ID="lnkSoli" runat="server" Visible="false"
                         NavigateUrl="admin-pedidos.aspx"
                         CssClass="text-xs font-bold bg-amber-100 text-amber-700 px-3 py-1 rounded-full hover:bg-amber-200 transition-colors">
-                    Solicitar cotizaciones
+                        Solicitar cotizaciones
                     </asp:HyperLink>
                 </nav>
                 <div class="flex items-center gap-2 shrink-0 ml-auto">
@@ -551,10 +680,10 @@
                     <p style="font-size: .8125rem; color: #9ca3af; margin: 0;">Administra tu informacion personal y pedidos</p>
                 </div>
 
-                <div style="display: flex; gap: 20px; align-items: flex-start;" class="flex-col-mobile">
+                <div class="perfil-layout">
 
                     <!-- SIDEBAR -->
-                    <aside style="width: 220px; flex-shrink: 0;">
+                    <aside class="perfil-sidebar">
                         <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 10px; position: sticky; top: 80px;">
                             <div style="display: flex; align-items: center; gap: 10px; padding: 10px 10px 12px; border-bottom: 1px solid #f3f4f6; margin-bottom: 6px;">
                                 <div style="width: 36px; height: 36px; border-radius: 50%; background: #111827; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -565,38 +694,35 @@
                                     <asp:Label ID="lblEmailSide" runat="server" Style="font-size: .6875rem; color: #9ca3af; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" />
                                 </div>
                             </div>
-                            <button type="button" class="nav-item active" id="nav-detalles" onclick="showTab('detalles',this)">
-                                <span class="material-symbols-outlined nav-icon">person</span>Detalles de la cuenta
-                       
-                            </button>
-                            <button type="button" class="nav-item" id="nav-pedidos" onclick="showTab('pedidos',this)">
-                                <span class="material-symbols-outlined nav-icon">receipt_long</span>Historial de pedidos
-                       
-                            </button>
-                            <button type="button" class="nav-item" id="nav-seguridad" onclick="showTab('seguridad',this)">
-                                <span class="material-symbols-outlined nav-icon">lock</span>Seguridad
-                       
-                            </button>
-                            <div style="border-top: 1px solid #f3f4f6; margin: 8px 0;"></div>
-                            <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar sesion"
-                                OnClick="btnCerrarSesion_Click" CausesValidation="false" CssClass="nav-item danger" />
+                            <div class="sidebar-nav">
+                                <button type="button" class="nav-item active" id="nav-detalles" onclick="showTab('detalles',this)">
+                                    <span class="material-symbols-outlined nav-icon">person</span>Detalles
+                                </button>
+                                <button type="button" class="nav-item" id="nav-pedidos" onclick="showTab('pedidos',this)">
+                                    <span class="material-symbols-outlined nav-icon">receipt_long</span>Pedidos
+                                </button>
+                                <button type="button" class="nav-item" id="nav-seguridad" onclick="showTab('seguridad',this)">
+                                    <span class="material-symbols-outlined nav-icon">lock</span>Seguridad
+                                </button>
+                                <div style="border-top: 1px solid #f3f4f6; margin: 8px 0; width: 100%;"></div>
+                                <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar sesion"
+                                    OnClick="btnCerrarSesion_Click" CausesValidation="false" CssClass="nav-item danger" />
+                            </div>
                         </div>
                     </aside>
 
                     <!-- CONTENT -->
-                    <div style="flex: 1; min-width: 0;">
+                    <div class="perfil-content">
 
                         <!-- TAB DETALLES -->
                         <div id="tab-detalles" class="tab-panel active">
 
-                            <!-- Mi perfil -->
                             <div class="section-card">
                                 <div class="section-head">
                                     <h2 class="section-title">Mi perfil</h2>
                                     <button type="button" class="btn-edit" id="editbtn-perfil"
                                         onclick="toggleEdit('view-perfil','edit-perfil','editbtn-perfil')">
                                         <span class="material-symbols-outlined" style="font-size: 14px;">edit</span> Editar
-                               
                                     </button>
                                 </div>
                                 <div class="section-body" id="view-perfil">
@@ -637,14 +763,12 @@
                                 </div>
                             </div>
 
-                            <!-- Contrasena -->
                             <div class="section-card">
                                 <div class="section-head">
                                     <h2 class="section-title">Contrasena</h2>
                                     <button type="button" class="btn-edit"
                                         onclick="showTab('seguridad', document.getElementById('nav-seguridad'))">
                                         <span class="material-symbols-outlined" style="font-size: 14px;">edit</span> Editar
-                               
                                     </button>
                                 </div>
                                 <div class="section-body">
@@ -653,17 +777,14 @@
                                 </div>
                             </div>
 
-                            <!-- ✅ Direccion de Entrega -->
                             <div class="section-card">
                                 <div class="section-head">
                                     <h2 class="section-title">Direccion de Entrega</h2>
                                     <button type="button" class="btn-edit" id="editbtn-dir"
                                         onclick="toggleEdit('view-dir','edit-dir','editbtn-dir')">
                                         <span class="material-symbols-outlined" style="font-size: 14px;">edit</span> Editar
-                               
                                     </button>
                                 </div>
-                                <!-- Vista -->
                                 <div class="section-body" id="view-dir">
                                     <div class="data-grid">
                                         <div>
@@ -692,7 +813,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Edicion -->
                                 <div class="section-body" id="edit-dir" style="display: none; border-top: 1px solid #f3f4f6;">
                                     <asp:Label ID="lblMsgDir" runat="server" Visible="false" CssClass="alert" />
                                     <div class="edit-grid">
@@ -722,11 +842,8 @@
                                         </div>
                                     </div>
                                     <div class="btn-row">
-                                        <asp:Button ID="btnGuardarDireccion" runat="server"
-                                            Text="Guardar direccion"
-                                            OnClick="btnGuardarDireccion_Click"
-                                            CausesValidation="false"
-                                            CssClass="btn-primary" />
+                                        <asp:Button ID="btnGuardarDireccion" runat="server" Text="Guardar direccion"
+                                            OnClick="btnGuardarDireccion_Click" CausesValidation="false" CssClass="btn-primary" />
                                         <button type="button" class="btn-secondary"
                                             onclick="toggleEdit('view-dir','edit-dir','editbtn-dir')">
                                             Cancelar</button>
@@ -747,14 +864,22 @@
                                         <div class="orders-wrap">
                                             <table class="orders-table">
                                                 <thead>
-                                                    <tr>
-                                                        <th># Pedido</th>
-                                                        <th>Fecha</th>
-                                                        <th>Productos</th>
-                                                        <th>Total</th>
-                                                        <th>Estado</th>
-                                                        <th></th>
-                                                    </tr>
+                                                    <ItemTemplate>
+                                                        <tr>
+                                                            <td data-label="Pedido" style="font-weight:700;color:#111827;">#<%# Eval("IdPedido") %></td>
+                                                            <td data-label="Fecha" style="color:#6b7280;"><%# Eval("FechaPedido", "{0:dd/MM/yyyy}") %></td>
+                                                            <td data-label="Productos" style="color:#6b7280;"><%# Eval("NumProductos") %> articulo(s)</td>
+                                                            <td data-label="Total" style="font-weight:600;">$<%# Eval("Total", "{0:N2}") %> MXN</td>
+                                                            <td data-label="Estado"><asp:Label ID="lblEstado" runat="server" /></td>
+                                                            <td data-label="">
+                                                                <button type="button"
+                                                                    onclick="verDetalle('<%# Eval("IdPedido") %>','<%# Eval("FechaPedido", "{0:dd/MM/yyyy}") %>','<%# Eval("Total", "{0:N2}") %>','<%# Eval("Estado") %>','<%# Eval("ConektaOrder") %>','<%# Eval("Direccion") %>','<%# Eval("Ciudad") %>','<%# Eval("Nombre") %>','<%# Eval("Telefono") %>')"
+                                                                    style="display:inline-flex;align-items:center;gap:4px;padding:8px 14px;background:#111827;border:none;border-radius:8px;font-size:.75rem;font-weight:600;color:#fff;cursor:pointer;width:100%;justify-content:center;">
+                                                                    <span class="material-symbols-outlined" style="font-size:14px;">visibility</span>Ver detalle
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </ItemTemplate>
                                                 </thead>
                                                 <asp:Repeater ID="rptPedidos" runat="server" OnItemDataBound="rptPedidos_ItemDataBound">
                                                     <HeaderTemplate>
@@ -764,17 +889,15 @@
                                                         <tr>
                                                             <td style="font-weight: 700; color: #111827;">#<%# Eval("IdPedido") %></td>
                                                             <td style="color: #6b7280;"><%# Eval("FechaPedido", "{0:dd/MM/yyyy}") %></td>
-                                                            <td style="color: #6b7280;"><%# Eval("NumProductos") %> articulo(s)</td>
-                                                            <td style="font-weight: 600;">$<%# Eval("Total", "{0:N2}") %> MXN</td>
+                                                            <td style="color: #6b7280;"><%# Eval("NumProductos") %> art.</td>
+                                                            <td style="font-weight: 600;">$<%# Eval("Total", "{0:N2}") %></td>
                                                             <td>
                                                                 <asp:Label ID="lblEstado" runat="server" /></td>
                                                             <td>
                                                                 <button type="button"
                                                                     onclick="verDetalle('<%# Eval("IdPedido") %>','<%# Eval("FechaPedido", "{0:dd/MM/yyyy}") %>','<%# Eval("Total", "{0:N2}") %>','<%# Eval("Estado") %>','<%# Eval("ConektaOrder") %>','<%# Eval("Direccion") %>','<%# Eval("Ciudad") %>','<%# Eval("Nombre") %>','<%# Eval("Telefono") %>')"
                                                                     style="display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; background: #f3f4f6; border: none; border-radius: 7px; font-size: .75rem; font-weight: 600; color: #374151; cursor: pointer;">
-                                                                    <span class="material-symbols-outlined" style="font-size: 14px;">visibility</span>
-                                                                    Ver detalle
-                                                           
+                                                                    <span class="material-symbols-outlined" style="font-size: 14px;">visibility</span>Ver
                                                                 </button>
                                                             </td>
                                                         </tr>
@@ -793,7 +916,7 @@
                                             <p class="empty-sub">Cuando realices una compra aparecera aqui.</p>
                                             <a href="productos.aspx" style="display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; background: #111827; color: #fff; border-radius: 9px; font-size: .8125rem; font-weight: 700; text-decoration: none;">
                                                 <span class="material-symbols-outlined" style="font-size: 16px;">storefront</span>Ver catalogo
-                                        </a>
+                                            </a>
                                         </div>
                                     </asp:Panel>
                                 </div>
@@ -849,7 +972,6 @@
                 </div>
             </div>
         </footer>
-
     </form>
 
     <!-- MODAL DETALLE PEDIDO -->
@@ -869,7 +991,7 @@
             <div style="padding: 20px 24px;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;">
                     <div style="background: #f9fafb; border-radius: 10px; padding: 12px 14px;">
-                        <p class="data-label">Numero de orden Conekta</p>
+                        <p class="data-label">Orden Conekta</p>
                         <p id="modalConekta" style="font-size: .75rem; font-weight: 700; color: #111827; font-family: monospace; word-break: break-all;"></p>
                     </div>
                     <div style="background: #f9fafb; border-radius: 10px; padding: 12px 14px;">
@@ -887,7 +1009,7 @@
                     <p id="modalTelefono" style="font-size: .75rem; color: #60a5fa; margin: 0;"></p>
                 </div>
                 <div style="margin-bottom: 20px;">
-                    <p style="font-size: .75rem; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px;">Seguimiento del Pedido</p>
+                    <p style="font-size: .75rem; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px;">Seguimiento</p>
                     <div class="timeline" id="modalTimeline"></div>
                 </div>
                 <div>
@@ -899,25 +1021,6 @@
             </div>
         </div>
     </div>
-
-    <style>
-        @media(max-width:768px) {
-            .flex-col-mobile {
-                flex-direction: column !important;
-            }
-
-            aside {
-                width: 100% !important;
-            }
-
-                aside > div {
-                    position: static !important;
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 4px;
-                }
-        }
-    </style>
 
     <script type="text/javascript">
         function showTab(name, btn) {
@@ -961,79 +1064,55 @@
         }
 
         function renderTimeline(estado) {
-
             var pasos = [
                 { key: 'confirmado', icon: 'check_circle', label: 'Confirmado', sub: 'Pago procesado' },
-                { key: 'preparando', icon: 'inventory_2', label: 'Preparando', sub: 'Preparando tu pedido' },
+                { key: 'preparando', icon: 'inventory_2', label: 'Preparando', sub: 'Preparando pedido' },
                 { key: 'enviado', icon: 'local_shipping', label: 'En camino', sub: 'Pedido enviado' },
                 { key: 'entregado', icon: 'home', label: 'Entregado', sub: 'Pedido recibido' }
             ];
-
             var orden = ['pendiente', 'confirmado', 'preparando', 'enviado', 'entregado'];
-
             var est = (estado || 'pendiente').toLowerCase();
             var idx = orden.indexOf(est);
-
             if (idx < 0) idx = 0;
-
             var html = '';
-
             pasos.forEach(function (paso) {
-
                 var pasoIdx = orden.indexOf(paso.key);
-
                 var cls = 'pending';
                 if (pasoIdx < idx) cls = 'done';
                 else if (pasoIdx === idx) cls = 'active';
-
                 var iconColor = cls === 'pending' ? '#9ca3af' : '#fff';
-
-                html += `
-        <div class="tl-item">
-            <div class="tl-dot ${cls}">
-                <span class="material-symbols-outlined" style="font-size:18px;color:${iconColor};">
-                    ${paso.icon}
-                </span>
-            </div>
-            <div class="tl-title">${paso.label}</div>
-            <div class="tl-sub">${paso.sub}</div>
-        </div>
-        `;
+                html += '<div class="tl-item"><div class="tl-dot ' + cls + '"><span class="material-symbols-outlined" style="font-size:18px;color:' + iconColor + ';">' + paso.icon + '</span></div><div class="tl-title">' + paso.label + '</div><div class="tl-sub">' + paso.sub + '</div></div>';
             });
-
             document.getElementById('modalTimeline').innerHTML = html;
         }
 
         function cargarProductos(idPedido) {
-            document.getElementById('modalProductos').innerHTML =
-                '<p style="text-align:center; padding:20px; color:#9ca3af; font-size:.8125rem;">Cargando productos...</p>';
+            document.getElementById('modalProductos').innerHTML = '<p style="text-align:center;padding:20px;color:#9ca3af;font-size:.8125rem;">Cargando...</p>';
             fetch('GetDetallesPedido.ashx?id=' + idPedido)
                 .then(function (r) { return r.json(); })
                 .then(function (data) {
                     if (!data || data.length === 0) {
-                        document.getElementById('modalProductos').innerHTML =
-                            '<p style="text-align:center; padding:20px; color:#9ca3af; font-size:.8125rem;">Sin productos registrados.</p>';
+                        document.getElementById('modalProductos').innerHTML = '<p style="text-align:center;padding:20px;color:#9ca3af;font-size:.8125rem;">Sin productos.</p>';
                         return;
                     }
                     var html = '';
                     data.forEach(function (item) {
-                        html += '<div style="display:flex; gap:12px; padding:12px 14px; border-bottom:1px solid #f9fafb;">' +
-                            '<img src="' + (item.ImagenUrl || '') + '" style="width:52px; height:52px; border-radius:10px; object-fit:cover; border:1px solid #f3f4f6; flex-shrink:0;" />' +
-                            '<div style="flex:1; min-width:0;">' +
-                            '<p style="font-size:.875rem; font-weight:700; color:#111827; margin:0 0 2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + item.NombreProducto + '</p>' +
-                            '<p style="font-size:.75rem; color:#9ca3af; margin:0 0 4px;">Color: ' + (item.Color || '—') + ' &nbsp;&middot;&nbsp; Cant: ' + item.Cantidad + '</p>' +
-                            '<p style="font-size:.875rem; font-weight:700; color:#111827; margin:0;">$' + parseFloat(item.Subtotal).toFixed(2) + '</p>' +
+                        html += '<div style="display:flex;gap:12px;padding:12px 14px;border-bottom:1px solid #f9fafb;">' +
+                            '<img src="' + (item.ImagenUrl || '') + '" style="width:52px;height:52px;border-radius:10px;object-fit:cover;border:1px solid #f3f4f6;flex-shrink:0;" />' +
+                            '<div style="flex:1;min-width:0;">' +
+                            '<p style="font-size:.875rem;font-weight:700;color:#111827;margin:0 0 2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + item.NombreProducto + '</p>' +
+                            '<p style="font-size:.75rem;color:#9ca3af;margin:0 0 4px;">Color: ' + (item.Color || '—') + ' · Cant: ' + item.Cantidad + '</p>' +
+                            '<p style="font-size:.875rem;font-weight:700;color:#111827;margin:0;">$' + parseFloat(item.Subtotal).toFixed(2) + '</p>' +
                             '</div></div>';
                     });
                     document.getElementById('modalProductos').innerHTML = html;
                 })
                 .catch(function () {
-                    document.getElementById('modalProductos').innerHTML =
-                        '<p style="text-align:center; padding:20px; color:#9ca3af; font-size:.8125rem;">No se pudieron cargar los productos.</p>';
+                    document.getElementById('modalProductos').innerHTML = '<p style="text-align:center;padding:20px;color:#9ca3af;font-size:.8125rem;">Error al cargar.</p>';
                 });
         }
 
         document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrarModal(); });
-</script>
+    </script>
 </body>
 </html>
