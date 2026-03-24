@@ -96,7 +96,6 @@ namespace Microtex
                 }
             }
 
-            // Badge leído
             var lblLeido = (Label)e.Item.FindControl("lblLeido");
             if (lblLeido != null)
             {
@@ -105,8 +104,6 @@ namespace Microtex
                 lblLeido.CssClass = leido ? "badge badge-read" : "badge badge-new";
             }
 
-            // ✅ Botón Ver como <button type="button"> HTML puro via Literal
-            // Pasa parámetros directo a verDetalle() — igual que admin-pedidos.aspx
             var litBtnVer = (Literal)e.Item.FindControl("litBtnVer");
             if (litBtnVer != null)
             {
