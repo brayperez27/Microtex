@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="MicrotexDB-Web.config Connection String" description="MicrotexDB Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Server=tcp:microtexsqlserver.database.windows.net,1433;&#xD;&#xA;         Initial Catalog=microtexdb;&#xD;&#xA;         Persist Security Info=False;&#xD;&#xA;         User ID=microtexadmin;&#xD;&#xA;         Password=Microtex#2026;&#xD;&#xA;         MultipleActiveResultSets=False;&#xD;&#xA;         Encrypt=True;&#xD;&#xA;         TrustServerCertificate=False;&#xD;&#xA;         Connection Timeout=30;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Usuario\\source\\repos\\Microtex\\Microtex\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MicrotexDB']/@connectionString" />
-  </parameter>
-</parameters>

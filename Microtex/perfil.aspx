@@ -54,6 +54,59 @@
                 display: flex;
             }
 
+        /* ── LAYOUT PRINCIPAL ── */
+        .perfil-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+        }
+
+        .perfil-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 20px;
+            align-items: start;
+            width: 100%;
+        }
+
+        .perfil-sidebar {
+            min-width: 0;
+        }
+
+        .perfil-content {
+            min-width: 0;
+            width: 100%;
+        }
+
+        @media(max-width: 768px) {
+            .perfil-layout {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .perfil-sidebar > div {
+                position: static !important;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                padding-top: 8px;
+            }
+
+            .nav-item {
+                flex: 1;
+                min-width: 100px;
+                justify-content: center;
+                padding: 8px 10px;
+                font-size: .75rem;
+            }
+        }
+
+        /* ── NAV ITEMS ── */
         .nav-item {
             display: flex;
             align-items: center;
@@ -102,6 +155,7 @@
             color: #9ca3af;
         }
 
+        /* ── TABS ── */
         .tab-panel {
             display: none;
             animation: fadeIn .18s ease;
@@ -123,6 +177,7 @@
             }
         }
 
+        /* ── CARDS ── */
         .section-card {
             background: #fff;
             border: 1px solid #e5e7eb;
@@ -189,6 +244,14 @@
             .data-grid, .edit-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
+            }
+
+            .section-head {
+                padding: 14px 16px;
+            }
+
+            .section-body {
+                padding: 14px 16px;
             }
         }
 
@@ -277,6 +340,20 @@
             margin-top: 18px;
         }
 
+        @media(max-width: 480px) {
+            .btn-row {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                display: flex;
+            }
+        }
+
+        /* ── TABLA PEDIDOS ── */
         .orders-wrap {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
@@ -317,6 +394,51 @@
                 background: #fafafa;
             }
 
+        @media(max-width: 768px) {
+            .orders-table {
+                min-width: unset;
+                width: 100%;
+            }
+
+                .orders-table thead {
+                    display: none;
+                }
+
+                .orders-table tbody tr {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 14px 16px;
+                    border-bottom: 1px solid #f3f4f6;
+                    gap: 6px;
+                }
+
+                    .orders-table tbody tr:last-child {
+                        border-bottom: none;
+                    }
+
+                .orders-table td {
+                    padding: 0;
+                    border: none;
+                    font-size: .8125rem;
+                }
+
+                    .orders-table td::before {
+                        content: attr(data-label);
+                        font-size: .6875rem;
+                        font-weight: 700;
+                        color: #9ca3af;
+                        text-transform: uppercase;
+                        letter-spacing: .06em;
+                        display: block;
+                        margin-bottom: 2px;
+                    }
+
+                    .orders-table td:last-child {
+                        margin-top: 6px;
+                    }
+        }
+
+        /* ── BADGES ── */
         .badge {
             display: inline-flex;
             align-items: center;
@@ -349,6 +471,7 @@
             line-height: 1;
         }
 
+        /* ── EMPTY STATE ── */
         .empty-state {
             text-align: center;
             padding: 48px 24px;
@@ -378,6 +501,7 @@
             margin-bottom: 20px;
         }
 
+        /* ── ALERTS ── */
         .alert {
             font-size: .8125rem;
             font-weight: 600;
@@ -398,6 +522,7 @@
             border: 1px solid #fecaca;
         }
 
+        /* ── MODAL ── */
         #modalPedido {
             position: fixed;
             inset: 0;
@@ -438,6 +563,7 @@
                 border-radius: 4px;
             }
 
+        /* ── TIMELINE ── */
         .timeline {
             display: flex;
             justify-content: space-between;
@@ -498,77 +624,7 @@
             color: #9ca3af;
         }
 
-        /* LAYOUT */
-        .perfil-layout {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        .perfil-sidebar {
-            width: 220px;
-            flex-shrink: 0;
-        }
-
-        .perfil-content {
-            flex: 1;
-            min-width: 0;
-        }
-
-        /* MOBILE */
-        @media(max-width: 768px) {
-            .perfil-layout {
-                flex-direction: column;
-                gap: 16px;
-            }
-
-            .perfil-sidebar {
-                width: 100%;
-            }
-
-                .perfil-sidebar > div {
-                    position: static !important;
-                }
-
-            .sidebar-nav {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-                padding-top: 8px;
-            }
-
-            .nav-item {
-                flex: 1;
-                min-width: 100px;
-                justify-content: center;
-                padding: 8px 10px;
-                font-size: .75rem;
-            }
-
-            .section-head {
-                padding: 14px 16px;
-            }
-
-            .section-body {
-                padding: 14px 16px;
-            }
-
-            .btn-row {
-                flex-direction: column;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                text-align: center;
-                justify-content: center;
-                display: flex;
-            }
-
-            #modalBox {
-                border-radius: 16px;
-                max-height: 95vh;
-            }
-
+        @media(max-width: 480px) {
             .tl-title {
                 font-size: .65rem;
             }
@@ -576,55 +632,17 @@
             .tl-sub {
                 display: none;
             }
-        }
 
-        @media(max-width: 480px) {
-            main {
-                padding: 1rem .75rem !important;
+            #modalBox {
+                border-radius: 16px;
+                max-height: 95vh;
             }
-
-            .section-card {
-                border-radius: 12px;
-            }
-
-            .orders-table th, .orders-table td {
-                padding: 10px 10px;
-            }
-        }
-
-        /* Tabla pedidos mobile mejorada */
-        @media(max-width: 768px) {
-            .orders-table { min-width: unset; width: 100%; }
-            .orders-table thead { display: none; }
-            .orders-table tbody tr {
-                display: flex;
-                flex-direction: column;
-                padding: 14px 16px;
-                border-bottom: 1px solid #f3f4f6;
-                gap: 6px;
-            }
-            .orders-table tbody tr:last-child { border-bottom: none; }
-            .orders-table td {
-                padding: 0;
-                border: none;
-                font-size: .8125rem;
-            }
-            .orders-table td::before {
-                content: attr(data-label);
-                font-size: .6875rem;
-                font-weight: 700;
-                color: #9ca3af;
-                text-transform: uppercase;
-                letter-spacing: .06em;
-                display: block;
-                margin-bottom: 2px;
-            }
-            .orders-table td:last-child { margin-top: 6px; }
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <!-- ===== HEADER ===== -->
         <header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
             <div class="flex w-full items-center gap-3 px-4 sm:px-6 py-3">
                 <a href="Default.aspx" class="flex items-center gap-2 shrink-0">
@@ -673,8 +691,10 @@
             </div>
         </header>
 
-        <main style="flex: 1; padding: 2rem 1rem;">
-            <div style="max-width: 1040px; margin: 0 auto;">
+        <!-- ===== MAIN ===== -->
+        <main style="flex: 1;">
+            <div class="perfil-wrapper">
+
                 <div style="margin-bottom: 1.5rem;">
                     <h1 style="font-size: 1.375rem; font-weight: 800; color: #111827; margin: 0 0 2px;">Mi Cuenta</h1>
                     <p style="font-size: .8125rem; color: #9ca3af; margin: 0;">Administra tu informacion personal y pedidos</p>
@@ -682,9 +702,10 @@
 
                 <div class="perfil-layout">
 
-                    <!-- SIDEBAR -->
+                    <!-- ── SIDEBAR ── -->
                     <aside class="perfil-sidebar">
                         <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 10px; position: sticky; top: 80px;">
+                            <!-- Avatar + nombre -->
                             <div style="display: flex; align-items: center; gap: 10px; padding: 10px 10px 12px; border-bottom: 1px solid #f3f4f6; margin-bottom: 6px;">
                                 <div style="width: 36px; height: 36px; border-radius: 50%; background: #111827; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                     <asp:Label ID="lblAvatarSide" runat="server" Style="color: #fff; font-weight: 800; font-size: .9rem; line-height: 1;" />
@@ -694,15 +715,19 @@
                                     <asp:Label ID="lblEmailSide" runat="server" Style="font-size: .6875rem; color: #9ca3af; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" />
                                 </div>
                             </div>
+                            <!-- Nav -->
                             <div class="sidebar-nav">
                                 <button type="button" class="nav-item active" id="nav-detalles" onclick="showTab('detalles',this)">
                                     <span class="material-symbols-outlined nav-icon">person</span>Detalles
+                               
                                 </button>
                                 <button type="button" class="nav-item" id="nav-pedidos" onclick="showTab('pedidos',this)">
                                     <span class="material-symbols-outlined nav-icon">receipt_long</span>Pedidos
+                               
                                 </button>
                                 <button type="button" class="nav-item" id="nav-seguridad" onclick="showTab('seguridad',this)">
                                     <span class="material-symbols-outlined nav-icon">lock</span>Seguridad
+                               
                                 </button>
                                 <div style="border-top: 1px solid #f3f4f6; margin: 8px 0; width: 100%;"></div>
                                 <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar sesion"
@@ -711,18 +736,20 @@
                         </div>
                     </aside>
 
-                    <!-- CONTENT -->
+                    <!-- ── CONTENT ── -->
                     <div class="perfil-content">
 
                         <!-- TAB DETALLES -->
                         <div id="tab-detalles" class="tab-panel active">
 
+                            <!-- Mi perfil -->
                             <div class="section-card">
                                 <div class="section-head">
                                     <h2 class="section-title">Mi perfil</h2>
                                     <button type="button" class="btn-edit" id="editbtn-perfil"
                                         onclick="toggleEdit('view-perfil','edit-perfil','editbtn-perfil')">
                                         <span class="material-symbols-outlined" style="font-size: 14px;">edit</span> Editar
+                                   
                                     </button>
                                 </div>
                                 <div class="section-body" id="view-perfil">
@@ -763,12 +790,14 @@
                                 </div>
                             </div>
 
+                            <!-- Contraseña -->
                             <div class="section-card">
                                 <div class="section-head">
                                     <h2 class="section-title">Contrasena</h2>
                                     <button type="button" class="btn-edit"
                                         onclick="showTab('seguridad', document.getElementById('nav-seguridad'))">
                                         <span class="material-symbols-outlined" style="font-size: 14px;">edit</span> Editar
+                                   
                                     </button>
                                 </div>
                                 <div class="section-body">
@@ -777,12 +806,14 @@
                                 </div>
                             </div>
 
+                            <!-- Dirección -->
                             <div class="section-card">
                                 <div class="section-head">
                                     <h2 class="section-title">Direccion de Entrega</h2>
                                     <button type="button" class="btn-edit" id="editbtn-dir"
                                         onclick="toggleEdit('view-dir','edit-dir','editbtn-dir')">
                                         <span class="material-symbols-outlined" style="font-size: 14px;">edit</span> Editar
+                                   
                                     </button>
                                 </div>
                                 <div class="section-body" id="view-dir">
@@ -850,7 +881,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <!-- TAB PEDIDOS -->
@@ -864,22 +894,14 @@
                                         <div class="orders-wrap">
                                             <table class="orders-table">
                                                 <thead>
-                                                    <ItemTemplate>
-                                                        <tr>
-                                                            <td data-label="Pedido" style="font-weight:700;color:#111827;">#<%# Eval("IdPedido") %></td>
-                                                            <td data-label="Fecha" style="color:#6b7280;"><%# Eval("FechaPedido", "{0:dd/MM/yyyy}") %></td>
-                                                            <td data-label="Productos" style="color:#6b7280;"><%# Eval("NumProductos") %> articulo(s)</td>
-                                                            <td data-label="Total" style="font-weight:600;">$<%# Eval("Total", "{0:N2}") %> MXN</td>
-                                                            <td data-label="Estado"><asp:Label ID="lblEstado" runat="server" /></td>
-                                                            <td data-label="">
-                                                                <button type="button"
-                                                                    onclick="verDetalle('<%# Eval("IdPedido") %>','<%# Eval("FechaPedido", "{0:dd/MM/yyyy}") %>','<%# Eval("Total", "{0:N2}") %>','<%# Eval("Estado") %>','<%# Eval("ConektaOrder") %>','<%# Eval("Direccion") %>','<%# Eval("Ciudad") %>','<%# Eval("Nombre") %>','<%# Eval("Telefono") %>')"
-                                                                    style="display:inline-flex;align-items:center;gap:4px;padding:8px 14px;background:#111827;border:none;border-radius:8px;font-size:.75rem;font-weight:600;color:#fff;cursor:pointer;width:100%;justify-content:center;">
-                                                                    <span class="material-symbols-outlined" style="font-size:14px;">visibility</span>Ver detalle
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                    </ItemTemplate>
+                                                    <tr>
+                                                        <th>Pedido</th>
+                                                        <th>Fecha</th>
+                                                        <th>Productos</th>
+                                                        <th>Total</th>
+                                                        <th>Estado</th>
+                                                        <th></th>
+                                                    </tr>
                                                 </thead>
                                                 <asp:Repeater ID="rptPedidos" runat="server" OnItemDataBound="rptPedidos_ItemDataBound">
                                                     <HeaderTemplate>
@@ -887,17 +909,18 @@
                                                     </HeaderTemplate>
                                                     <ItemTemplate>
                                                         <tr>
-                                                            <td style="font-weight: 700; color: #111827;">#<%# Eval("IdPedido") %></td>
-                                                            <td style="color: #6b7280;"><%# Eval("FechaPedido", "{0:dd/MM/yyyy}") %></td>
-                                                            <td style="color: #6b7280;"><%# Eval("NumProductos") %> art.</td>
-                                                            <td style="font-weight: 600;">$<%# Eval("Total", "{0:N2}") %></td>
-                                                            <td>
+                                                            <td data-label="Pedido" style="font-weight: 700; color: #111827;">#<%# Eval("IdPedido") %></td>
+                                                            <td data-label="Fecha" style="color: #6b7280;"><%# Eval("FechaPedido", "{0:dd/MM/yyyy}") %></td>
+                                                            <td data-label="Productos" style="color: #6b7280;"><%# Eval("NumProductos") %> art.</td>
+                                                            <td data-label="Total" style="font-weight: 600;">$<%# Eval("Total", "{0:N2}") %></td>
+                                                            <td data-label="Estado">
                                                                 <asp:Label ID="lblEstado" runat="server" /></td>
-                                                            <td>
+                                                            <td data-label="">
                                                                 <button type="button"
                                                                     onclick="verDetalle('<%# Eval("IdPedido") %>','<%# Eval("FechaPedido", "{0:dd/MM/yyyy}") %>','<%# Eval("Total", "{0:N2}") %>','<%# Eval("Estado") %>','<%# Eval("ConektaOrder") %>','<%# Eval("Direccion") %>','<%# Eval("Ciudad") %>','<%# Eval("Nombre") %>','<%# Eval("Telefono") %>')"
                                                                     style="display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; background: #f3f4f6; border: none; border-radius: 7px; font-size: .75rem; font-weight: 600; color: #374151; cursor: pointer;">
                                                                     <span class="material-symbols-outlined" style="font-size: 14px;">visibility</span>Ver
+                                                               
                                                                 </button>
                                                             </td>
                                                         </tr>
@@ -954,8 +977,11 @@
                         </div>
 
                     </div>
+                    <!-- /perfil-content -->
                 </div>
+                <!-- /perfil-layout -->
             </div>
+            <!-- /perfil-wrapper -->
         </main>
 
         <asp:Label ID="lblAvatar" runat="server" Style="display: none;" />
@@ -1072,16 +1098,14 @@
             ];
             var orden = ['pendiente', 'confirmado', 'preparando', 'enviado', 'entregado'];
             var est = (estado || 'pendiente').toLowerCase();
-            var idx = orden.indexOf(est);
-            if (idx < 0) idx = 0;
+            var idx = orden.indexOf(est); if (idx < 0) idx = 0;
             var html = '';
             pasos.forEach(function (paso) {
                 var pasoIdx = orden.indexOf(paso.key);
-                var cls = 'pending';
-                if (pasoIdx < idx) cls = 'done';
-                else if (pasoIdx === idx) cls = 'active';
+                var cls = pasoIdx < idx ? 'done' : (pasoIdx === idx ? 'active' : 'pending');
                 var iconColor = cls === 'pending' ? '#9ca3af' : '#fff';
-                html += '<div class="tl-item"><div class="tl-dot ' + cls + '"><span class="material-symbols-outlined" style="font-size:18px;color:' + iconColor + ';">' + paso.icon + '</span></div><div class="tl-title">' + paso.label + '</div><div class="tl-sub">' + paso.sub + '</div></div>';
+                html += '<div class="tl-item"><div class="tl-dot ' + cls + '"><span class="material-symbols-outlined" style="font-size:18px;color:' + iconColor + ';">' + paso.icon + '</span></div>'
+                    + '<div class="tl-title">' + paso.label + '</div><div class="tl-sub">' + paso.sub + '</div></div>';
             });
             document.getElementById('modalTimeline').innerHTML = html;
         }
@@ -1097,13 +1121,13 @@
                     }
                     var html = '';
                     data.forEach(function (item) {
-                        html += '<div style="display:flex;gap:12px;padding:12px 14px;border-bottom:1px solid #f9fafb;">' +
-                            '<img src="' + (item.ImagenUrl || '') + '" style="width:52px;height:52px;border-radius:10px;object-fit:cover;border:1px solid #f3f4f6;flex-shrink:0;" />' +
-                            '<div style="flex:1;min-width:0;">' +
-                            '<p style="font-size:.875rem;font-weight:700;color:#111827;margin:0 0 2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + item.NombreProducto + '</p>' +
-                            '<p style="font-size:.75rem;color:#9ca3af;margin:0 0 4px;">Color: ' + (item.Color || '—') + ' · Cant: ' + item.Cantidad + '</p>' +
-                            '<p style="font-size:.875rem;font-weight:700;color:#111827;margin:0;">$' + parseFloat(item.Subtotal).toFixed(2) + '</p>' +
-                            '</div></div>';
+                        html += '<div style="display:flex;gap:12px;padding:12px 14px;border-bottom:1px solid #f9fafb;">'
+                            + '<img src="' + (item.ImagenUrl || '') + '" style="width:52px;height:52px;border-radius:10px;object-fit:cover;border:1px solid #f3f4f6;flex-shrink:0;" />'
+                            + '<div style="flex:1;min-width:0;">'
+                            + '<p style="font-size:.875rem;font-weight:700;color:#111827;margin:0 0 2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + item.NombreProducto + '</p>'
+                            + '<p style="font-size:.75rem;color:#9ca3af;margin:0 0 4px;">Color: ' + (item.Color || '—') + ' · Cant: ' + item.Cantidad + '</p>'
+                            + '<p style="font-size:.875rem;font-weight:700;color:#111827;margin:0;">$' + parseFloat(item.Subtotal).toFixed(2) + '</p>'
+                            + '</div></div>';
                     });
                     document.getElementById('modalProductos').innerHTML = html;
                 })
