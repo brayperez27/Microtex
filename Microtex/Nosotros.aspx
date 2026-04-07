@@ -176,7 +176,16 @@
                         </h1>
                         <p class="text-base sm:text-xl hero-subtitle leading-relaxed mb-6 sm:mb-8">
                             <asp:Literal ID="litHeroSubtitle" runat="server"
-                                Text="Desde 2024, Microtex nace con el objetivo de ofrecer soluciones de pintura de alta calidad para proyectos residenciales, comerciales e industriales. Combinamos innovación, tecnología y materiales de primera para transformar espacios con acabados duraderos, modernos y confiables." />
+                                Text="En MICROTEX, transformamos espacios en experiencias únicas.
+                                Nacimos con la visión de innovar en cada detalle.
+                                Desde 2024, desarrollamos soluciones para pisos y paredes.
+                                Integramos diseño, calidad y precisión en cada proyecto.
+                                Nuestros recubrimientos destacan por su estética.
+                                También por su durabilidad y versatilidad.
+                                Creamos espacios que inspiran y rompen lo convencional.
+                                Trabajamos con materiales responsables y sostenibles.
+                                Cuidamos cada proceso sin comprometer la calidad.
+                                MICROTEX sigue creciendo y dejando huella." />
                         </p>
                     </div>
                 </div>
@@ -189,18 +198,10 @@
                         <div>
                             <div class="mb-8 sm:mb-12">
                                 <div class="w-12 h-1 bg-microtex-brown mb-4 sm:mb-6"></div>
-                                <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Misión</h2>
+                                <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Nuestro Propósito: </h2>
                                 <p class="text-base sm:text-lg text-microtex-muted leading-relaxed">
                                     <asp:Literal ID="litMission" runat="server"
-                                        Text="Nuestra misión es ofrecer pinturas y recubrimientos de alta calidad que brinden protección, durabilidad y estética a cada proyecto. Buscamos superar las expectativas de nuestros clientes mediante productos confiables, innovación constante y un servicio comprometido con la excelencia." />
-                                </p>
-                            </div>
-                            <div>
-                                <div class="w-12 h-1 bg-microtex-brown mb-4 sm:mb-6"></div>
-                                <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Visión</h2>
-                                <p class="text-base sm:text-lg text-microtex-muted leading-relaxed">
-                                    <asp:Literal ID="litVision" runat="server"
-                                        Text="Ser una empresa reconocida en el sector de pinturas y recubrimientos por la calidad de nuestros productos, la innovación en nuestras soluciones y la confianza que generamos en nuestros clientes, consolidándonos como una marca referente en el mercado nacional." />
+                                        Text="Es crear recubrimientos de alta calidad que realmente marquen la diferencia: productos duraderos, confiables y con soluciones innovadoras que respondan a lo que nuestros clientes neces3itan. Buscamos no solo cumplir expectativas, sino superarlas, construyendo relaciones de confianza y consolidando nuestra presencia en el mercado." />
                                 </p>
                             </div>
                         </div>

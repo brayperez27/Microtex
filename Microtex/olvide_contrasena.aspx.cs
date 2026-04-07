@@ -71,7 +71,7 @@ namespace Microtex
                 string smtpHost = "smtp-relay.brevo.com";
                 int smtpPort = 587;
                 string smtpUser = "a4ddfb001@smtp-brevo.com";
-                string smtpPass = "xsmtpsib-d2712a4aa5f2baf1241519ffc7e3a4bf7a16cf412bdf62f25a9861f8b8ff1b25-AGF8rungN7XvYd8N";
+                string smtpPass = "xsmtpsib-d2712a4aa5f2baf1241519ffc7e3a4bf7a16cf412bdf62f25a9861f8b8ff1b25-0bYyumroIbsFl7GC";
                 string remitente = "microtexmexicohidalgo@gmail.com";
 
                 MailMessage mail = new MailMessage();
